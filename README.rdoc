@@ -1,28 +1,71 @@
-== README
+Using the Demo
+==============
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+I have the following bash script which will switch from tag to tag.
 
-Things you may want to cover:
+```
+git stash --include-untracked && git checkout -f "$1" > /dev/null
+```
 
-* Ruby version
+Demo Script
+===========
 
-* System dependencies
+rails _4.2.4_ new blahblog_
+# note, the repo is actually in blahblog. I want to show Rails actually generating an app, but I want to use the one under source control.
 
-* Configuration
+* Uncomment therubyracer
+* get rid of Spring, which causes future steps to fail, with `spring stop`
+* `bundle`
 
-* Database creation
+==== This is tag 1
 
-* Database initialization
+* Start Server with `bin/rails server -b 0.0.0.0 -p 9125`
+* Look, Rails is running. It's using WEBrick, which isn't good for production but works great for development. Even a blank app with no database is ready to go.
+* open Gemfile. Add `gem 'bootstrap-generators'`
+* `bundle`
+* `rails generate bootstrap:install`
+* spring stop # just in case
 
-* How to run the test suite
+==== This is tag 2
 
-* Services (job queues, cache servers, search engines, etc.)
+* `bin/rails generate scaffold posts title body:text`
+* load /posts
+* see error about migration
+* Thank you for providing me with instructions, I think I will do what you suggest.
+* copy and paste migration command
+* show posts#index
+* add 4 posts.
+* delete one.
 
-* Deployment instructions
+==== This is tag 3
 
-* ...
+Make index look more like a blog:
+* table becomes div with class="panel panel-default panel-body"
+* add "Posts" to the menu in app/views/layouts/application.html.erb
+* demonstrate mobile view for free.
 
+==== This is tag 4
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* Let's say someone wants to syndicate our blog post after the third entry... hooray!
+* show posts.json
+* Maybe they want RSS. Find the Wikipedia RSS feed and create app/views/posts/index.rss.erb
+
+==== This is tag 5
+
+* abstract panels from index into posts/_post
+* show that posts#index is still working
+* add that to posts#show
+
+==== This is tag 6
+
+* `bin/rails g scaffold comments post_id:integer author body:text`
+* app/models/comment.rb: `belongs_to :post`
+* app/models/post.rb: `has_many :comments`
+* copy form from scaffold to posts#show.
+* post_id should be hidden.
+* add a comment. Goes to comments#show... not a great experience.
+* change it to redirect to the post.
+* create another one. Better!
+
+==== This is tag 7
+
