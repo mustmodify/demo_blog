@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+  <channel>
+   <title>My Super Blog</title>
+   <description>This is an example of an RSS feed</description>
+   <link>http://www.example.com/main.html</link>
+   <lastBuildDate>Mon, 06 Sep 2010 00:01:00 +0000 </lastBuildDate>
+   <pubDate>Sun, 06 Sep 2009 16:20:00 +0000</pubDate>
+   <ttl>1800</ttl>
+ 
+   <% @posts.each do |post| %> 
+     <item>
+      <title><%= post.title %></title>
+      <description>Blog post about <%= post.title %></description>
+      <link>http://www.example.com<%= post_path(post) %></link>
+      <pubDate><%= post.created_at %></pubDate>
+     </item>
+   <% end %>
+
+  </channel>
+</rss>
