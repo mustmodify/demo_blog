@@ -1,4 +1,7 @@
 <%= render @post %>
+
+<%= render :partial => 'comments' %>
+
 <%= link_to posts_path, class: 'btn btn-default' do %>
   <span class="glyphicon glyphicon-list-alt"></span>
   Back
