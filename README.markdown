@@ -10,8 +10,9 @@ git stash --include-untracked && git checkout -f "$1" > /dev/null
 Demo Script
 ===========
 
-rails _4.2.4_ new blahblog_
-# note, the repo is actually in blahblog. I want to show Rails actually generating an app, but I want to use the one under source control.
+rails \_4.2.4\_ new blahblog\_
+
+(note, the repo is actually in blahblog. I want to show Rails actually generating an app, but I want to use the one under source control.)
 
 * Uncomment therubyracer
 * get rid of Spring, which causes future steps to fail, with `spring stop`
