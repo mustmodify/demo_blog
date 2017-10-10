@@ -65,6 +65,7 @@ Make index look more like a blog:
 * copy form from scaffold to posts#show.
 * post_id should be hidden.
 * add a comment. Goes to comments#show... not a great experience.
+* Create a posts partial.
 * change it to redirect to the post.
 * create another one. Better!
 
