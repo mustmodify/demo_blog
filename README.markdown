@@ -22,10 +22,14 @@ rails \_4.2.4\_ new blahblog\_
 
 * Start Server with `bin/rails server -b 0.0.0.0 -p 9125`
 * Look, Rails is running. It's using WEBrick, which isn't good for production but works great for development. Even a blank app with no database is ready to go.
+* create a pages controller. Create pages#welcome. render text: 'hello world'
+* in config/routes.rb, root to: 'pages#welcome'
+* it works!
 * open Gemfile. Add `gem 'bootstrap-generators'`
 * `bundle`
 * `rails generate bootstrap:install`
 * spring stop # just in case
+* restart rails server
 
 ==== This is tag 2
 
