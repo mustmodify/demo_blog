@@ -109,6 +109,8 @@ Comments - AR Relationships
 
 ==== This is tag 6
 
+RESTful resource representations
+--------------------------------
 
 * Let's say someone wants to syndicate our blog post after the third entry... hooray!
 * show posts.json
